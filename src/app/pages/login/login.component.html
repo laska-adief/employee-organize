@@ -5,10 +5,16 @@
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
         <input matInput placeholder="Email" formControlName="email">
+        @if (loginForm.get('email')?.touched || loginForm.get('email')?.dirty) {
+        <mat-error class="error-label">{{getErrorMessage('email')}}</mat-error>
+        }
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Password</mat-label>
         <input matInput type="password" placeholder="Password" formControlName="password">
+        @if (loginForm.get('password')?.touched || loginForm.get('password')?.dirty) {
+        <mat-error class="error-label">{{getErrorMessage('password')}}</mat-error>
+        }
       </mat-form-field>
       <button mat-raised-button color="primary" type="submit">Login</button>
     </form>

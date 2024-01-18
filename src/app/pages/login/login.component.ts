@@ -41,5 +41,21 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  getErrorMessage(field: string) {
+    let errorMessage = 'You must enter a value';
+    switch (field) {
+      case 'email':
+        if (this.loginForm.get('email')?.hasError('email')) {
+          errorMessage = 'Not a valid email';
+        }
+        break;
+
+      default:
+        errorMessage = 'You must enter a value';
+        break;
+    }
+    return errorMessage;
+  }
+
   login() {}
 }

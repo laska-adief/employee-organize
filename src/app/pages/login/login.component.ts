@@ -9,6 +9,7 @@ import {
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -24,6 +25,7 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent implements OnInit {
+  authService = inject(AuthService);
   loginForm!: FormGroup;
 
   constructor(private fb: FormBuilder) {}

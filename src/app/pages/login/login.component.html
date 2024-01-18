@@ -1,7 +1,7 @@
 <div class="container-login">
   <div class="form-login">
     <div class="form-label">Employee Organize</div>
-    <form class="form-field" [formGroup]="loginForm">
+    <form class="form-field" [formGroup]="loginForm" (submit)="login()">
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
         <input matInput placeholder="Email" formControlName="email">

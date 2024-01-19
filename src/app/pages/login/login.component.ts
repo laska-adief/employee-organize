@@ -9,7 +9,7 @@ import {
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { AuthService } from '../../services/auth.service';
+import { AuthService, UserLogin } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -57,5 +57,17 @@ export class LoginComponent implements OnInit {
     return errorMessage;
   }
 
-  login() {}
+  login() {
+    if (this.loginForm.valid) {
+      const loginEmail = this.loginForm.get('email')?.value;
+      const loginPassword = this.loginForm.get('password')?.value;
+      if (loginEmail === 'admin' && loginPassword === 'admin') {
+        const loginUser: UserLogin = {
+          email: loginEmail,
+          password: loginPassword,
+        };
+        this.authService.login(loginUser);
+      }
+    }
+  }
 }

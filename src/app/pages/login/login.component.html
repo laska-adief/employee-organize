@@ -16,6 +16,11 @@
         <mat-error class="error-label">{{getErrorMessage('password')}}</mat-error>
         }
       </mat-form-field>
+      @if (isErrorLogin) {
+      <div class="error-login-label">
+        <mat-error>Email or Password is Invalid</mat-error>
+      </div>
+      }
       <button mat-raised-button color="primary" type="submit">Login</button>
     </form>
   </div>

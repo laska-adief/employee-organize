@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit {
         email: loginEmail,
         password: loginPassword,
       };
-      console.log('login', loginUser);
+      this.authService.login(loginUser);
       this.isErrorLogin = false;
     } else {
       this.isErrorLogin = true;

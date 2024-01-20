@@ -27,6 +27,7 @@ import { AuthService, UserLogin } from '../../services/auth.service';
 export class LoginComponent implements OnInit {
   authService = inject(AuthService);
   loginForm!: FormGroup;
+  isErrorLogin: boolean = false;
 
   constructor(private fb: FormBuilder) {}
 
@@ -58,16 +59,21 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    if (this.loginForm.valid) {
-      const loginEmail = this.loginForm.get('email')?.value;
-      const loginPassword = this.loginForm.get('password')?.value;
-      if (loginEmail === 'admin' && loginPassword === 'admin') {
-        const loginUser: UserLogin = {
-          email: loginEmail,
-          password: loginPassword,
-        };
-        this.authService.login(loginUser);
-      }
+    const loginEmail = this.loginForm.get('email')?.value;
+    const loginPassword = this.loginForm.get('password')?.value;
+    if (
+      this.loginForm.valid &&
+      loginEmail === 'admin@gmail.com' &&
+      loginPassword === 'admin'
+    ) {
+      const loginUser: UserLogin = {
+        email: loginEmail,
+        password: loginPassword,
+      };
+      console.log('login', loginUser);
+      this.isErrorLogin = false;
+    } else {
+      this.isErrorLogin = true;
     }
   }
 }

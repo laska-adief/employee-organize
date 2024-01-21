@@ -15,4 +15,9 @@ export class AuthService {
     const userAuth = JSON.stringify(user);
     localStorage.setItem('authEmployeeOrganize', userAuth);
   }
+
+  isLogin() {
+    const authLogin = localStorage.getItem('authEmployeeOrganize');
+    return authLogin ? true : false;
+  }
 }

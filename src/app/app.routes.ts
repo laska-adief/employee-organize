@@ -13,11 +13,13 @@ export const routes: Routes = [
     title: 'Employee',
     canActivate: [authGuard],
     children: [
+      { path: '', redirectTo: 'list', pathMatch: 'full' },
       {
         path: 'list',
         component: EmployeeListComponent,
         title: 'Employee List',
       },
+      { path: '**', redirectTo: 'employee' },
     ],
   },
   { path: '**', redirectTo: 'employee' },

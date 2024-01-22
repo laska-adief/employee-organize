@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { AuthService, UserLogin } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -25,6 +26,7 @@ import { AuthService, UserLogin } from '../../services/auth.service';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent implements OnInit {
+  router = inject(Router);
   authService = inject(AuthService);
   loginForm!: FormGroup;
   isErrorLogin: boolean = false;
@@ -72,6 +74,7 @@ export class LoginComponent implements OnInit {
       };
       this.authService.login(loginUser);
       this.isErrorLogin = false;
+      this.router.navigate(['employee']);
     } else {
       this.isErrorLogin = true;
     }

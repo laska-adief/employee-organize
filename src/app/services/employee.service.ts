@@ -1,6 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 
+export interface Employee {
+  prefix: string;
+  firstName: string;
+  lastName: string;
+  fullName: string;
+  email: string;
+  gender: string;
+  birthDate: string;
+  phone: string;
+  avatar: string;
+  street: string;
+  city: string;
+  country: string;
+  jobTitle: string;
+  id: string;
+}
 @Injectable({
   providedIn: 'root',
 })
@@ -10,6 +26,6 @@ export class EmployeeService {
   constructor() {}
 
   getAllEmployee() {
-    return this.http.get(this.url);
+    return this.http.get<Employee[]>(this.url);
   }
 }

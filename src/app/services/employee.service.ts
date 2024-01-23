@@ -6,5 +6,10 @@ import { Injectable, inject } from '@angular/core';
 })
 export class EmployeeService {
   http = inject(HttpClient);
+  readonly url = 'http://localhost:3000/employees';
   constructor() {}
+
+  getAllEmployee() {
+    return this.http.get(this.url);
+  }
 }

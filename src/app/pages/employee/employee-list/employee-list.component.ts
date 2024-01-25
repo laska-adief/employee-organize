@@ -15,4 +15,17 @@ export class EmployeeListComponent {
   employeeService = inject(EmployeeService);
   displayedColumns: string[] = ['firstname', 'lastname', 'email', 'jobtitle'];
   dataSource!: MatTableDataSource<Employee>;
+
+  getEmployeeData() {
+    this.employeeService.getAllEmployee().subscribe({
+      next: (resp) => {
+        if(resp) {
+          this.dataSource.data = resp;
+        }
+      },
+      error: (error) => {
+        console.log(error);
+      }
+    });
+  }
 }

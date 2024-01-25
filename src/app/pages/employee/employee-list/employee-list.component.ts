@@ -17,7 +17,7 @@ import { Employee, EmployeeService } from '../../../services/employee.service';
   templateUrl: './employee-list.component.html',
   styleUrl: './employee-list.component.scss',
 })
-export class EmployeeListComponent implements OnInit, AfterViewInit {
+export class EmployeeListComponent implements OnInit {
   employeeService = inject(EmployeeService);
   displayedColumns: string[] = ['firstname', 'lastname', 'email', 'jobtitle'];
   dataSource!: MatTableDataSource<Employee>;
@@ -28,8 +28,6 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.getEmployeeData();
   }
-
-  ngAfterViewInit(): void {}
 
   getEmployeeData() {
     this.employeeService.getAllEmployee().subscribe({

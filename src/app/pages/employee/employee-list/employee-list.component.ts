@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, OnInit, inject } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  OnInit,
+  ViewChild,
+  inject,
+} from '@angular/core';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
@@ -15,6 +21,9 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
   employeeService = inject(EmployeeService);
   displayedColumns: string[] = ['firstname', 'lastname', 'email', 'jobtitle'];
   dataSource!: MatTableDataSource<Employee>;
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
   ngOnInit(): void {
     this.getEmployeeData();

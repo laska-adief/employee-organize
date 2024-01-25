@@ -34,6 +34,8 @@ export class EmployeeListComponent implements OnInit {
       next: (resp) => {
         if (resp) {
           this.dataSource = new MatTableDataSource<Employee>(resp);
+          this.dataSource.paginator = this.paginator;
+          this.dataSource.sort = this.sort;
         }
       },
       error: (error) => {

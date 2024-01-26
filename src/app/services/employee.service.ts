@@ -3,18 +3,18 @@ import { Injectable, inject } from '@angular/core';
 
 export interface Employee {
   prefix: string;
-  firstName: string;
-  lastName: string;
-  fullName: string;
+  firstname: string;
+  lastname: string;
+  fullname: string;
   email: string;
   gender: string;
-  birthDate: string;
+  birthdate: string;
   phone: string;
   avatar: string;
   street: string;
   city: string;
   country: string;
-  jobTitle: string;
+  jobtitle: string;
   id: string;
 }
 @Injectable({

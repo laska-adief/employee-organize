@@ -9,11 +9,12 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { Employee, EmployeeService } from '../../../services/employee.service';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-employee-list',
   standalone: true,
-  imports: [MatTableModule, MatSortModule, MatPaginatorModule],
+  imports: [MatTableModule, MatSortModule, MatPaginatorModule, MatButtonModule],
   templateUrl: './employee-list.component.html',
   styleUrl: './employee-list.component.scss',
 })

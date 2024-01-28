@@ -3,6 +3,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { EmployeeComponent } from './pages/employee/employee.component';
 import { authGuard, authLoginGuard } from './guards/auth.guard';
 import { EmployeeListComponent } from './pages/employee/employee-list/employee-list.component';
+import { EmployeeFormComponent } from './pages/employee/employee-form/employee-form.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'employee', pathMatch: 'full' },
@@ -23,6 +24,11 @@ export const routes: Routes = [
         path: 'list',
         component: EmployeeListComponent,
         title: 'Employee List',
+      },
+      {
+        path: 'form',
+        component: EmployeeFormComponent,
+        title: 'Employee Form',
       },
       { path: '**', redirectTo: 'employee' },
     ],

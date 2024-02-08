@@ -25,5 +25,14 @@
         <input matInput placeholder="Phone">
       </mat-form-field>
     </div>
+    <div class="field-group">
+      <mat-form-field appearance="outline">
+        <mat-label>Birthdate</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
   </form>
 </section>

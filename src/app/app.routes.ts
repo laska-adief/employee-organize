@@ -10,25 +10,21 @@ export const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    title: 'Login',
     canActivate: [authLoginGuard],
   },
   {
     path: 'employee',
     component: EmployeeComponent,
-    title: 'Employee',
     canActivate: [authGuard],
     children: [
       { path: '', redirectTo: 'list', pathMatch: 'full' },
       {
         path: 'list',
         component: EmployeeListComponent,
-        title: 'Employee List',
       },
       {
         path: 'form',
         component: EmployeeFormComponent,
-        title: 'Employee Form',
       },
       { path: '**', redirectTo: 'employee' },
     ],

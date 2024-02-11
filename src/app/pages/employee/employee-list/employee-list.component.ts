@@ -48,6 +48,7 @@ export class EmployeeListComponent implements OnInit {
       },
       error: (error) => {
         console.log(error);
+        this.dataSource = new MatTableDataSource<Employee>([]);
       },
     });
   }

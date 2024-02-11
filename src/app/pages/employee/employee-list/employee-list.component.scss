@@ -13,4 +13,9 @@
   &::ng-deep .mat-mdc-header-cell div {
     justify-content: center;
   }
+
+  .no-data td {
+    padding: 1rem;
+    text-align: center;
+  }
 }

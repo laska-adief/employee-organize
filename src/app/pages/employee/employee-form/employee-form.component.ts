@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -20,9 +20,13 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   templateUrl: './employee-form.component.html',
   styleUrl: './employee-form.component.scss',
 })
-export class EmployeeFormComponent {
+export class EmployeeFormComponent implements OnInit {
   formEmployee!: FormGroup;
   constructor(private fb: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.initializeForm();
+  }
 
   initializeForm() {
     this.formEmployee = this.fb.group({

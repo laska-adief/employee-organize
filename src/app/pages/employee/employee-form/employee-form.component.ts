@@ -23,4 +23,16 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class EmployeeFormComponent {
   formEmployee!: FormGroup;
   constructor(private fb: FormBuilder) {}
+
+  initializeForm() {
+    this.formEmployee = this.fb.group({
+      gender: ['male'],
+      firstname: [''],
+      lastname: [''],
+      email: [''],
+      phone: [''],
+      birthday: [''],
+      jobtitle: [''],
+    });
+  }
 }

@@ -1,6 +1,6 @@
 <section>
   <h1 class="title">Add Employee</h1>
-  <form>
+  <form [formGroup]="formEmployee">
     <mat-radio-group aria-label="Select Gender" [color]="'primary'" class="field-gender">
       <mat-radio-button value="male">Male</mat-radio-button>
       <mat-radio-button value="female">Female</mat-radio-button>

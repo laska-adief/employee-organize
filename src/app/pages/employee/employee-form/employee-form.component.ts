@@ -5,7 +5,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-employee-form',
   standalone: true,
@@ -16,6 +16,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
     MatDatepickerModule,
     MatNativeDateModule,
     MatRadioModule,
+    ReactiveFormsModule,
   ],
   templateUrl: './employee-form.component.html',
   styleUrl: './employee-form.component.scss',

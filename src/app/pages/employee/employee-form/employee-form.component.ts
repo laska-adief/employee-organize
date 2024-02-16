@@ -39,7 +39,7 @@ export class EmployeeFormComponent implements OnInit {
       gender: ['male', [Validators.required]],
       firstname: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
-      email: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required]],
       birthday: ['', [Validators.required]],
       jobtitle: ['', [Validators.required]],

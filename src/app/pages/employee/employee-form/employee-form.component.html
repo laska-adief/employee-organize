@@ -1,16 +1,16 @@
 <section>
   <h1 class="title">Add Employee</h1>
   <form [formGroup]="formEmployee">
-    <mat-radio-group aria-label="Select Gender" [color]="'primary'" class="field-gender">
+    <mat-radio-group aria-label="Select Gender" [color]="'primary'" class="field-gender" formControlName="gender">
       <mat-radio-button value="male">Male</mat-radio-button>
       <mat-radio-button value="female">Female</mat-radio-button>
     </mat-radio-group>
     <div class="field-group">
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" formControlName="firstname">
         <mat-label>Firstname</mat-label>
         <input matInput placeholder="Firstname">
       </mat-form-field>
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" formControlName="lastname">
         <mat-label>Lastname</mat-label>
         <input matInput placeholder="Lastname">
       </mat-form-field>
